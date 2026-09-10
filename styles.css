@@ -35,6 +35,17 @@ a:hover { color: #37BFC2; }
 @media (max-width: 1023px) {
   #top.hero-home { height: auto !important; padding-bottom: 24px; }
   .tc-hero-img img { width: 100% !important; height: auto !important; }
+
+  /* los rayos ocupan solo el área de la diadema, detrás de ella */
+  #top.hero-home #hero-canvas {
+    top: clamp(24px, 5vw, 64px);
+    left: clamp(16px, 4vw, 80px);
+    right: clamp(16px, 4vw, 80px);
+    bottom: auto;
+    width: auto;
+    height: auto;
+    aspect-ratio: 967 / 717;
+  }
 }
 
 @media (min-width: 1024px) {

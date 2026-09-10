@@ -379,12 +379,47 @@
     });
   }
 
+  /* ── En móvil, los rayos ocupan solo el área de la diadema ── */
+  function initHeroCanvasFit() {
+    var canvas = document.getElementById('hero-canvas');
+    var img = document.getElementById('hero-img');
+    var hero = document.getElementById('top');
+    if (!canvas || !img || !hero) return;
+
+    function fit() {
+      if (window.innerWidth >= 1024) {
+        ['top', 'left', 'right', 'bottom', 'width', 'height'].forEach(function (p) {
+          canvas.style.removeProperty(p);
+        });
+        canvas.style.setProperty('inset', '0');
+        canvas.style.setProperty('width', '100%');
+        canvas.style.setProperty('height', '100%');
+        return;
+      }
+      var h = hero.getBoundingClientRect();
+      var i = img.getBoundingClientRect();
+      if (!i.width) return;
+      canvas.style.setProperty('inset', 'auto');
+      canvas.style.setProperty('top', (i.top - h.top) + 'px', 'important');
+      canvas.style.setProperty('left', (i.left - h.left) + 'px', 'important');
+      canvas.style.setProperty('width', i.width + 'px', 'important');
+      canvas.style.setProperty('height', i.height + 'px', 'important');
+    }
+
+    fit();
+    window.addEventListener('resize', fit);
+    if (img.complete) requestAnimationFrame(fit);
+    else img.addEventListener('load', fit);
+    if (typeof ResizeObserver !== 'undefined') new ResizeObserver(fit).observe(img);
+  }
+
   function init() {
     initMenu();
     initHeaderScroll();
     initReveal();
     initHeroImage();
     initParticles();
+    initHeroCanvasFit();
     initForm();
   }
 
