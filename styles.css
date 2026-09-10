@@ -36,6 +36,15 @@ a:hover { color: #37BFC2; }
   #top.hero-home { height: auto !important; padding-bottom: 24px; }
   .tc-hero-img img { width: 100% !important; height: auto !important; }
 
+  /* la diadema va full-bleed, sin márgenes laterales */
+  .tc-hero-img {
+    margin-left: calc(-1 * clamp(16px, 4vw, 80px));
+    margin-right: calc(-1 * clamp(16px, 4vw, 80px));
+    max-width: none !important;
+    width: calc(100% + 2 * clamp(16px, 4vw, 80px)) !important;
+    flex-basis: calc(100% + 2 * clamp(16px, 4vw, 80px)) !important;
+  }
+
   /* los rayos ocupan solo el área de la diadema, detrás de ella */
   #top.hero-home #hero-canvas {
     top: clamp(24px, 5vw, 64px);
