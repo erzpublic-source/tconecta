@@ -1,0 +1,71 @@
+/* T-Conecta — estilos globales */
+
+body {
+  margin: 0;
+  background: #040404;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: #59D9DC; text-decoration: none; }
+a:hover { color: #37BFC2; }
+
+/* hover de la navegación principal */
+.nav-link:hover { color: #37BFC2 !important; }
+
+/* campos del formulario */
+.tc-field::placeholder { color: #5A6577; }
+.tc-field:focus { outline: none; border-color: #37BFC2; }
+
+/* entrada del header */
+@keyframes tcDropIn {
+  from { opacity: 0; transform: translateY(-100%); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header { animation: none !important; }
+}
+
+/* visibilidad desktop / mobile */
+.tc-desk { display: none; }
+
+@media (max-width: 1023px) {
+  #top.hero-home { height: auto !important; padding-bottom: 24px; }
+  .tc-hero-img img { width: 100% !important; height: auto !important; }
+}
+
+@media (min-width: 1024px) {
+  .tc-desk { display: flex; }
+  .tc-mob { display: none !important; }
+
+  .tc-hero-row {
+    min-height: 600px;
+    justify-content: flex-end !important;
+  }
+
+  .tc-hero-img {
+    position: absolute;
+    left: clamp(0px, 2vw, 40px);
+    top: 0;
+    width: 967px;
+    height: 717px;
+    max-width: none;
+    flex: none !important;
+    pointer-events: none;
+  }
+
+  .tc-hero-img img {
+    width: 967px;
+    height: 717px;
+    object-fit: contain;
+  }
+
+  .tc-benefits {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 46px;
+    width: 1280px;
+    max-width: calc(100% - 32px);
+  }
+}

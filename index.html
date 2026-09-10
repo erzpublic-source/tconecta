@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T-Conecta · Conecta tu mundo</title>
+<meta name="description" content="Tienda de tecnología: línea gamer, audio, accesorios y figuras coleccionables. Bogotá, Colombia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Geist:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div style="background:#040404;font-family:Geist,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;color:#FEFEFE;min-height:100vh;overflow-x:clip">
+
+  <header style="position:sticky;top:0;z-index:60;display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:24px;padding:16px clamp(16px,4vw,80px);background:rgba(53,53,52,0.2);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #484551;animation:tcDropIn .55s cubic-bezier(.22,.9,.28,1)">
+    <button class="tc-mob" id="menu-open" aria-label="Abrir menú" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin-left:-12px;background:none;border:0;color:#FEFEFE;cursor:pointer;flex-shrink:0">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3.33 5h13.34M3.33 10h13.34M3.33 15h13.34"></path></svg>
+    </button>
+    <a href="#top" style="display:block;flex-shrink:0"><img src="assets/logo-h.png" alt="T-Conecta" style="display:block;width:143px;height:auto"></a>
+    <nav class="tc-desk" style="flex-direction:row;gap:24px;align-items:center;flex:1;justify-content:center;font-size:14px">
+      <a href="#top" style="color:#37BFC2;font-weight:600">Inicio</a>
+      <a href="#" class="nav-link" style="color:#888896">Zona Gamer</a>
+      <a href="#" class="nav-link" style="color:#888896">Catálogo</a>
+      <a href="#" class="nav-link" style="color:#888896">Audio &amp; TV</a>
+      <a href="#" class="nav-link" style="color:#888896">Figuras Coleccionables</a>
+      <a href="nosotros.html" class="nav-link" style="color:#888896">Nosotros y Contacto</a>
+      <a href="#" style="display:flex;flex-direction:row;gap:6px;align-items:center;color:#F04D5A;font-weight:600;cursor:pointer" class="nav-link">Ofertas<span style="display:inline-flex;padding:2px 6px;border-radius:4px;background:#F04D5A;color:#FEFEFE;font-size:10px;font-weight:700;line-height:1">HOT</span></a>
+    </nav>
+    <span class="tc-mob" style="display:inline-flex;flex-direction:row;gap:6px;padding:4px 10px;border-radius:6px;background:#F04D5A;align-items:center;flex-shrink:0;font-size:11px;font-weight:700;line-height:1;color:#FEFEFE">OFERTAS HOT</span>
+    <div class="tc-desk" style="flex-direction:row;gap:20px;align-items:center;flex-shrink:0;color:#FEFEFE">
+      <a href="#" aria-label="Facebook" style="display:flex;align-items:center;justify-content:center;width:20px;height:20px"><img src="assets/ico-facebook.svg" alt="" style="width:100%;height:100%;object-fit:contain"></a>
+      <a href="#" aria-label="Instagram" style="display:flex;align-items:center;justify-content:center;width:20px;height:20px"><img src="assets/ico-instagram.svg" alt="" style="width:100%;height:100%;object-fit:contain"></a>
+      <a href="#" aria-label="TikTok" style="display:flex;align-items:center;justify-content:center;width:20px;height:20px"><img src="assets/ico-tiktok.svg" alt="" style="width:100%;height:100%;object-fit:contain"></a>
+      <a href="#" aria-label="Carrito" style="display:flex;align-items:center;justify-content:center;width:20px;height:20px"><img src="assets/ico-carrito.svg" alt="" style="width:100%;height:100%;object-fit:contain"></a>
+    </div>
+  </header>
+
+  
+    <div id="mobile-menu" hidden style="position:fixed;inset:0;z-index:90;background:#040404;display:flex;flex-direction:column;justify-content:space-between;overflow-y:auto">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;flex-direction:row;padding:24px 16px 12px;align-items:center">
+          <img src="assets/logo-h.png" alt="T-Conecta" style="display:block;width:143px;height:auto">
+        </div>
+        <nav style="display:flex;flex-direction:column;padding:8px 16px">
+          <a href="#top" data-menu-close style="display:flex;flex-direction:row;padding:16px 8px;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.102);color:#37BFC2;font-size:18px;font-weight:600;min-height:44px;box-sizing:border-box">Inicio<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#37BFC2" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M5.25 3.5 8.75 7l-3.5 3.5"></path></svg></a>
+          <a href="#" style="display:flex;flex-direction:row;padding:16px 8px;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.102);color:#FEFEFE;font-size:18px;font-weight:500;min-height:44px;box-sizing:border-box">Zona Gamer<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#858A8C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M5.25 3.5 8.75 7l-3.5 3.5"></path></svg></a>
+                    <a href="#" style="display:flex;flex-direction:row;padding:16px 8px;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.102);color:#FEFEFE;font-size:18px;font-weight:500;min-height:44px;box-sizing:border-box">Catálogo<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#858A8C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M5.25 3.5 8.75 7l-3.5 3.5"></path></svg></a>
+          <a href="#" style="display:flex;flex-direction:row;padding:16px 8px;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.102);color:#FEFEFE;font-size:18px;font-weight:500;min-height:44px;box-sizing:border-box">Audio &amp; TV<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#858A8C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M5.25 3.5 8.75 7l-3.5 3.5"></path></svg></a>
+          <a href="#" style="display:flex;flex-direction:row;padding:16px 8px;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.102);color:#FEFEFE;font-size:18px;font-weight:500;min-height:44px;box-sizing:border-box">Figuras Coleccionables<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#858A8C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M5.25 3.5 8.75 7l-3.5 3.5"></path></svg></a>
+          <a href="nosotros.html" style="display:flex;flex-direction:row;padding:16px 8px;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.102);color:#FEFEFE;font-size:18px;font-weight:500;min-height:44px;box-sizing:border-box">Nosotros y Contacto<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#858A8C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M5.25 3.5 8.75 7l-3.5 3.5"></path></svg></a>
+          <a href="#" style="display:flex;flex-direction:row;padding:16px 8px;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.102);min-height:44px;box-sizing:border-box">
+            <span style="display:flex;flex-direction:row;gap:12px;align-items:center"><span style="color:#FEFEFE;font-size:18px;font-weight:500">Ofertas</span><span style="display:inline-flex;padding:2px 8px;border-radius:4px;background:#F04D5A;color:#FEFEFE;font-size:10px;font-weight:700;line-height:1.3">HOT</span></span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#858A8C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M5.25 3.5 8.75 7l-3.5 3.5"></path></svg>
+          </a>
+        </nav>
+      </div>
+      <div style="position:sticky;bottom:0;z-index:2;display:flex;flex-direction:row;gap:20px;padding:24px;justify-content:space-between;align-items:flex-end;background:#12121A;border-top:1px solid rgba(255,255,255,0.102)">
+        <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+          <span style="font-size:11px;letter-spacing:1px;color:#858A8C;text-transform:uppercase">Soporte directo</span>
+          <a href="mailto:tconectasiempre@gmail.com" style="font-size:14px;font-weight:600">tconectasiempre@gmail.com</a>
+        </div>
+        <button data-menu-close aria-label="Cerrar menú" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:#040404;border:1px solid rgba(255,255,255,0.102);color:#FEFEFE;cursor:pointer;flex-shrink:0">
+          <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="7" cy="7" r="5.8"></circle><path d="M5.2 5.2l3.6 3.6M8.8 5.2l-3.6 3.6"></path></svg>
+        </button>
+      </div>
+    </div>
+  
+
+  <section id="top" class="hero-home" style="position: relative; z-index: 2; overflow: visible; display: flex; flex-direction: column; align-items: center; background: linear-gradient(180deg,#040404 0%,#463794 100%); height: 717px">
+    <canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1;mix-blend-mode:screen"></canvas>
+    <div class="tc-hero-row" style="position:relative;z-index:3;width:100%;max-width:1440px;box-sizing:border-box;padding:clamp(24px,5vw,64px) clamp(16px,4vw,80px) clamp(40px,6vw,88px);display:flex;flex-direction:row;flex-wrap:wrap;gap:clamp(24px,4vw,56px);align-items:center;justify-content:center">
+      <div class="tc-hero-img" style="flex:1 1 320px;min-width:0;max-width:640px;display:flex;align-items:center;justify-content:center">
+        
+      <picture>
+          <source srcset="assets/hero-diadema.webp" type="image/webp" />
+          <img src="assets/hero-diadema.png" alt="Diadema gamer T-Conecta" fetchpriority="high" decoding="async" id="hero-img" style="display: block; width: 965px; height: 719px; opacity: 0; transform: scale(0.96); transition: opacity .8s cubic-bezier(.22,.9,.28,1), transform .8s cubic-bezier(.22,.9,.28,1)" />
+        </picture></div>
+      <div style="flex: 1 1 320px; min-width: 0; max-width: 560px; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; border-left-width: 0.5px; border-left-style: solid; border-left-color: #E5E2E1; padding-left: clamp(20px,3vw,20px)">
+        <h1 style="margin: 0; font-family: 'Bebas Neue',sans-serif; font-weight: 400; font-size: clamp(48px,7vw,120px); line-height: 0.98; letter-spacing: 0.5px; text-transform: uppercase; color: #E5E2E1">CONECTA<br><span style="color:#59D9DC">TU MUNDO</span></h1>
+        <p style="margin: 20px 0 0; font-size: clamp(14px,1.5vw,16px); line-height: 1.5; color: #F8F8F8; max-width: 46ch; text-wrap: pretty; margin-top: 0px; background-color: #2F2C5BD2">Línea gamer, accesorios esenciales, audio y coleccionables para llevar tu setup y tu día a día al siguiente nivel.</p>
+        <div style="display:flex;flex-direction:row;flex-wrap:wrap;gap:12px;width:100%">
+          <a href="#" style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; padding: 14px 32px; border-radius: 0px; background: #59D9DC; box-shadow: 0 0 40px 10px rgba(89,217,220,0.2); font-family: 'Bebas Neue',sans-serif; font-size: clamp(16px,1.6vw,18px); letter-spacing: 2px; text-transform: uppercase; color: #003738; box-sizing: border-box; height: 54px; width: 172px">Ver catálogo</a>
+          <a href="#" style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; padding: 14px 32px; border-radius: 0px; border: 2px solid #F04D5A; font-family: 'Bebas Neue',sans-serif; font-size: clamp(16px,1.6vw,18px); letter-spacing: 2px; text-transform: uppercase; color: #E5E2E1; box-sizing: border-box; height: 54px; width: 197px">Ver zona gamer</a>
+        </div>
+      </div>
+    </div>
+    <div class="tc-benefits" style="z-index: 6; width: 100%; max-width: 920px; box-sizing: border-box; background: rgba(53,53,52,0.2); border-top: 1px solid #484551; border-bottom: 1px solid #484551; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 24px clamp(16px,4vw,40px); display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 16px 34px">
+              <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; min-width: 0; justify-content: center">
+          <img src="assets/ico-envios.svg" alt="" style="width:28px;height:28px;object-fit:contain;flex-shrink:0">
+          <span style="display:flex;flex-direction:column;gap:6px;min-width:0">
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:1px;color:#E5E2E1;line-height:1">ENVÍO SEGURO</span>
+            <span style="font-size:11px;font-weight:600;color:#C9C4D3;line-height:1.2">Rápido y Confiable</span>
+          </span>
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; min-width: 0; justify-content: center">
+          <img src="assets/ico-garantia.svg" alt="" style="width:28px;height:28px;object-fit:contain;flex-shrink:0">
+          <span style="display:flex;flex-direction:column;gap:6px;min-width:0">
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:1px;color:#E5E2E1;line-height:1">GARANTÍA de CALIDAD</span>
+            <span style="font-size:11px;font-weight:600;color:#C9C4D3;line-height:1.2">Equipo de Primera Calidad</span>
+          </span>
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; min-width: 0; justify-content: center">
+          <img src="assets/ico-pagos.svg" alt="" style="width:28px;height:28px;object-fit:contain;flex-shrink:0">
+          <span style="display:flex;flex-direction:column;gap:6px;min-width:0">
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:1px;color:#E5E2E1;line-height:1">PAGOS SEGUROS</span>
+            <span style="font-size:11px;font-weight:600;color:#C9C4D3;line-height:1.2">100% Protegido</span>
+          </span>
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; min-width: 0; justify-content: center">
+          <img src="assets/ico-soporte.svg" alt="" style="width:28px;height:28px;object-fit:contain;flex-shrink:0">
+          <span style="display:flex;flex-direction:column;gap:6px;min-width:0">
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:1px;color:#E5E2E1;line-height:1">SOPORTE PERSONALizado</span>
+            <span style="font-size:11px;font-weight:600;color:#C9C4D3;line-height:1.2">Asistencia oportuna</span>
+          </span>
+        </div>
+    </div>
+  </section>
+
+  <section style="border-bottom: 1px solid #1C1B1B; height: 167px; margin-top: 45px">
+    <div style="max-width:1440px;margin:0 auto;box-sizing:border-box;padding:24px clamp(16px,4vw,80px);display:flex;flex-direction:column;gap:16px">
+      <h2 style="margin:0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:20px;letter-spacing:2px;text-align:center;color:#FEFEFE">NUESTROS ALIADOS</h2>
+      <div style="display:flex;flex-direction:row;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap">
+                  <span style="display:inline-flex;align-items:center;padding:10px 18px;border-radius:4px;border:1px solid #484551;background:#1C1B1B;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1.5px;color:#C9C4D3;line-height:1">SONY</span>
+          <span style="display:inline-flex;align-items:center;padding:10px 18px;border-radius:4px;border:1px solid #484551;background:#1C1B1B;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1.5px;color:#C9C4D3;line-height:1">LOGITECH</span>
+          <span style="display:inline-flex;align-items:center;padding:10px 18px;border-radius:4px;border:1px solid #484551;background:#1C1B1B;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1.5px;color:#C9C4D3;line-height:1">RAZER</span>
+          <span style="display:inline-flex;align-items:center;padding:10px 18px;border-radius:4px;border:1px solid #484551;background:#1C1B1B;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1.5px;color:#C9C4D3;line-height:1">CORSAIR</span>
+          <span style="display:inline-flex;align-items:center;padding:10px 18px;border-radius:4px;border:1px solid #484551;background:#1C1B1B;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1.5px;color:#C9C4D3;line-height:1">ASUS</span>
+          <span style="display:inline-flex;align-items:center;padding:10px 18px;border-radius:4px;border:1px solid #484551;background:#1C1B1B;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1.5px;color:#C9C4D3;line-height:1">STEELSERIES</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1440px;margin:0 auto;box-sizing:border-box;padding:clamp(40px,6vw,80px) clamp(16px,4vw,80px);display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span style="display:flex;flex-direction:row;gap:8px;align-items:center"><span style="width:16px;height:2px;background:#37BFC2"></span><span style="font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:1px;text-transform:uppercase;color:#37BFC2;line-height:1">Curaduría y Hardware</span></span>
+      <h2 style="margin:0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(32px,4vw,48px);letter-spacing:1.5px;text-transform:uppercase;color:#FEFEFE;line-height:1">EXPLORA NUESTRO ECOSISTEMA</h2>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:20px">
+      <article style="flex:1 1 280px;min-width:0;position:relative;overflow:hidden;border-radius:8px;background:#1C1B1B;border:1px solid #484551;min-height:360px;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;box-sizing:border-box">
+        <div style="position:absolute;inset:0;background:url(assets/cat-gaming.jpg) center/cover no-repeat;opacity:0.5"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg,#131313 0%,rgba(19,19,19,0.502) 50%,rgba(19,19,19,0) 100%)"></div>
+        <div style="position:relative;display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+          <span style="display:inline-flex;padding:4px 10px;border-radius:2px;background:rgba(70,55,148,0.2);border:1px solid #463794;font-size:10px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:#C9BFFF;line-height:1.3;flex-direction:row;gap:6px;align-items:center"><img src="assets/ico-gaming-ecosystem.svg" alt="" style="width:12px;height:12px;object-fit:contain;flex-shrink:0">GAMING ECOSYSTEM</span>
+          <h3 style="margin:0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:28px;letter-spacing:1px;color:#FEFEFE;line-height:1">GAMING ZONE</h3>
+          <p style="margin:0;font-size:13px;line-height:18px;color:#C9C4D3">Periféricos de alto rendimiento para gamers serios. Precisión y respuesta táctil.</p>
+          <a href="#" style="display: flex; flex-direction: row; gap: 8px; align-items: center; justify-content: center; width: 100%; min-height: 44px; padding: 10px 16px; border-radius: 0px; background: #59D9DC; font-family: 'Bebas Neue',sans-serif; font-size: 14px; letter-spacing: 1px; color: #131313; box-sizing: border-box">EXPLORAR GAMING<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#131313" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6h7M6.5 3l3 3-3 3"></path></svg></a>
+        </div>
+      </article>
+      <article style="flex:1 1 280px;min-width:0;position:relative;overflow:hidden;border-radius:8px;background:#1C1B1B;border:1px solid #484551;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;box-sizing:border-box">
+        <div style="position:absolute;inset:0;background:url(assets/cat-hogar.jpg) center/cover no-repeat;opacity:0.5"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg,#131313 0%,rgba(19,19,19,0.6) 50%,rgba(19,19,19,0) 100%)"></div>
+        <div style="position:relative;display:flex;flex-direction:column;gap:8px;align-items:flex-start">
+          <h3 style="margin:0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:24px;color:#FEFEFE;line-height:1">HOGAR &amp; OFICINA</h3>
+          <p style="margin:0;font-size:12px;font-weight:600;line-height:16px;text-transform:uppercase;color:#C9C4D3">TODO LO QUE NECESITAS PARA TRABAJAR Y DISFRUTAR EN CASA</p>
+          <a href="#" style="display:flex;flex-direction:row;gap:6px;align-items:center;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;color:#59D9DC;min-height:24px">EXPLORAR HOGAR<svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#59D9DC" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M3.75 2.5 6.25 5l-2.5 2.5"></path></svg></a>
+        </div>
+      </article>
+      <article style="flex:1 1 280px;min-width:0;position:relative;overflow:hidden;border-radius:8px;background:#1C1B1B;border:1px solid #484551;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;box-sizing:border-box">
+        <div style="position:absolute;inset:0;background:url(assets/cat-figuras.jpg) center/cover no-repeat;opacity:0.4"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg,#131313 0%,rgba(19,19,19,0.8) 50%,rgba(19,19,19,0) 100%)"></div>
+        <div style="position:relative;display:flex;flex-direction:column;gap:8px;align-items:flex-start">
+          <h3 style="margin:0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:24px;color:#FEFEFE;line-height:1">FIGURAS COLECCIONABLES</h3>
+          <p style="margin:0;font-size:12px;font-weight:600;line-height:16px;text-transform:uppercase;color:#C9C4D3">PIEZAS ÚNICAS PARA COLECCIONISTAS Y REGALOS ESPECIALES</p>
+          <a href="#" style="display:flex;flex-direction:row;gap:6px;align-items:center;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;color:#59D9DC;min-height:24px">VER COLECCIÓN<svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#59D9DC" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M3.75 2.5 6.25 5l-2.5 2.5"></path></svg></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section style="max-width:1440px;margin:0 auto;box-sizing:border-box;padding:clamp(40px,6vw,80px) clamp(16px,4vw,80px);display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span style="display:flex;flex-direction:row;gap:8px;align-items:center"><span style="width:16px;height:2px;background:#37BFC2"></span><span style="font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:1px;text-transform:uppercase;color:#37BFC2;line-height:1">Hardware de Elite</span></span>
+      <h2 style="margin:0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(32px,4vw,48px);letter-spacing:1.5px;text-transform:uppercase;color:#FEFEFE;line-height:1">DESTACADOS</h2>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:16px">
+              <article style="flex:1 1 250px;min-width:0;border-radius:4px;background:#2A2A2A;border:1px solid #484551;padding:16px;display:flex;flex-direction:column;box-sizing:border-box">
+          <img src="assets/prod-1.jpg" alt="Apex Pro TKL - SteelSeries" style="display:block;width:100%;height:160px;object-fit:cover;border-radius:2px">
+          <div style="display:flex;flex-direction:column;gap:6px;padding:12px 0">
+            <span style="font-size:14px;font-weight:600;color:#E5E2E1;line-height:1.2">Apex Pro TKL - SteelSeries</span>
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px;color:#59D9DC;line-height:1">$55.000</span>
+            <a href="#" style="display:flex;flex-direction:row;gap:6px;align-items:center;min-height:32px;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:0.5px;color:#59D9DC">Ver dispositivo<svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="#59D9DC" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2l2 2-2 2"></path></svg></a>
+          </div>
+        </article>
+        <article style="flex:1 1 250px;min-width:0;border-radius:4px;background:#2A2A2A;border:1px solid #484551;padding:16px;display:flex;flex-direction:column;box-sizing:border-box">
+          <img src="assets/prod-2.jpg" alt="Precision X - Logitech" style="display:block;width:100%;height:160px;object-fit:cover;border-radius:2px">
+          <div style="display:flex;flex-direction:column;gap:6px;padding:12px 0">
+            <span style="font-size:14px;font-weight:600;color:#E5E2E1;line-height:1.2">Precision X - Logitech</span>
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px;color:#59D9DC;line-height:1">$120.000</span>
+            <a href="#" style="display:flex;flex-direction:row;gap:6px;align-items:center;min-height:32px;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:0.5px;color:#59D9DC">Ver dispositivo<svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="#59D9DC" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2l2 2-2 2"></path></svg></a>
+          </div>
+        </article>
+        <article style="flex:1 1 250px;min-width:0;border-radius:4px;background:#2A2A2A;border:1px solid #484551;padding:16px;display:flex;flex-direction:column;box-sizing:border-box">
+          <img src="assets/prod-3.jpg" alt="Sonic Void - Razer" style="display:block;width:100%;height:160px;object-fit:cover;border-radius:2px">
+          <div style="display:flex;flex-direction:column;gap:6px;padding:12px 0">
+            <span style="font-size:14px;font-weight:600;color:#E5E2E1;line-height:1.2">Sonic Void - Razer</span>
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px;color:#59D9DC;line-height:1">$500.000</span>
+            <a href="#" style="display:flex;flex-direction:row;gap:6px;align-items:center;min-height:32px;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:0.5px;color:#59D9DC">Ver dispositivo<svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="#59D9DC" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2l2 2-2 2"></path></svg></a>
+          </div>
+        </article>
+        <article style="flex:1 1 250px;min-width:0;border-radius:4px;background:#2A2A2A;border:1px solid #484551;padding:16px;display:flex;flex-direction:column;box-sizing:border-box">
+          <img src="assets/prod-4.jpg" alt="Nexus Pro - Corsair" style="display:block;width:100%;height:160px;object-fit:cover;border-radius:2px">
+          <div style="display:flex;flex-direction:column;gap:6px;padding:12px 0">
+            <span style="font-size:14px;font-weight:600;color:#E5E2E1;line-height:1.2">Nexus Pro - Corsair</span>
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px;color:#59D9DC;line-height:1">$115.000</span>
+            <a href="#" style="display:flex;flex-direction:row;gap:6px;align-items:center;min-height:32px;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:0.5px;color:#59D9DC">Ver dispositivo<svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="#59D9DC" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2l2 2-2 2"></path></svg></a>
+          </div>
+        </article>
+    </div>
+  </section>
+
+  <section style="max-width:1440px;margin:0 auto;box-sizing:border-box;padding:clamp(40px,6vw,80px) clamp(16px,4vw,80px);display:flex;flex-direction:row;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center">
+    <div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+      <span style="font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#59D9DC">Especial Temporada Gamer</span>
+      <h2 style="margin:0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(28px,4vw,44px);text-transform:uppercase;color:#FEFEFE;line-height:1">Eleva tu nivel de juego</h2>
+      <p style="margin:0;font-size:14px;line-height:20px;color:#C9C4D3;max-width:52ch;text-wrap:pretty">Descubre teclados mecánicos de alta precisión, mouses de respuesta inmediata y controles para tus consolas favoritas. Rendimiento sin concesiones.</p>
+      <a href="#" style="display: flex; flex-direction: row; gap: 8px; align-items: center; justify-content: center; min-height: 47px; padding: 14px 24px; border-radius: 0px; background: #59D9DC; font-family: 'Bebas Neue',sans-serif; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; color: #131313; box-sizing: border-box">Ir a la Colección Gamer<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#131313" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6h7M6.5 3l3 3-3 3"></path></svg></a>
+    </div>
+    <div style="flex:1 1 320px;min-width:0;border-radius:8px;overflow:hidden">
+      <img src="assets/promo-control.png" alt="Colección gamer" style="display:block;width:100%;height:auto">
+    </div>
+  </section>
+
+  <section style="max-width:1440px;margin:0 auto;box-sizing:border-box;padding:clamp(40px,6vw,80px) clamp(16px,4vw,80px);display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center">
+      <span style="font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#59D9DC">Nuestra Filosofía</span>
+      <h2 style="margin:0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(28px,4vw,44px);color:#FEFEFE;line-height:1">Más que tecnología, soluciones que te conectan</h2>
+      <p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:#94A3B8;max-width:72ch;text-wrap:pretty">En t-conecta creemos que la tecnología debe ser accesible, funcional y emocionante. Seleccionamos dispositivos, periféricos y accesorios pensados para optimizar tu trabajo, potenciar tus partidas y complementar tu estilo de vida.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:16px">
+              <article style="flex:1 1 280px;min-width:0;border-radius:4px;background:#2A2A2A;border:1px solid rgba(255,255,255,0.102);padding:24px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;box-sizing:border-box">
+          <span style="width:48px;height:48px;border-radius:8px;background:rgba(55,191,194,0.1333);border:1px solid #37BFC2;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#37BFC2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h12v12H6z"></path><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"></path></svg></span>
+          <h3 style="margin:0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:20px;color:#FEFEFE;line-height:1">Curaduría Experta</h3>
+          <p style="margin:0;font-size:14px;line-height:20px;color:#E5E2E1;text-wrap:pretty">Evaluamos exhaustivamente la calidad, durabilidad y respuesta técnica de cada componente antes de incluirlo en nuestro catálogo.</p>
+        </article>
+        <article style="flex:1 1 280px;min-width:0;border-radius:4px;background:#2A2A2A;border:1px solid rgba(255,255,255,0.102);padding:24px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;box-sizing:border-box">
+          <span style="width:48px;height:48px;border-radius:8px;background:rgba(55,191,194,0.1333);border:1px solid #37BFC2;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#37BFC2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span>
+          <h3 style="margin:0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:20px;color:#FEFEFE;line-height:1">Comunidad Activa</h3>
+          <p style="margin:0;font-size:14px;line-height:20px;color:#E5E2E1;text-wrap:pretty">Conectamos apasionados del gaming y el hardware a través de torneos, dinámicas y asesoría especializada constante.</p>
+        </article>
+        <article style="flex:1 1 280px;min-width:0;border-radius:4px;background:#2A2A2A;border:1px solid rgba(255,255,255,0.102);padding:24px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;box-sizing:border-box">
+          <span style="width:48px;height:48px;border-radius:8px;background:rgba(55,191,194,0.1333);border:1px solid #37BFC2;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#37BFC2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"></path><path d="M16 8h4l3 3v5h-7V8Z"></path><path d="M5.5 20a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"></path><path d="M18.5 20a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"></path></svg></span>
+          <h3 style="margin:0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:20px;color:#FEFEFE;line-height:1">Envíos SEGUROS</h3>
+          <p style="margin:0;font-size:14px;line-height:20px;color:#E5E2E1;text-wrap:pretty">Nuestra logística inteligente distribuye en Bogotá Colombia con revisión previa del envío.</p>
+        </article>
+    </div>
+  </section>
+
+  <footer style="background:#1C1B1B;border-top:1px solid rgba(255,255,255,0.102)">
+    <div style="max-width:1440px;margin:0 auto;box-sizing:border-box;padding:40px clamp(16px,4vw,80px);display:flex;flex-direction:column;gap:32px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px">
+        <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+          <img src="assets/logo-h.png" alt="T-Conecta" style="display:block;width:143px;height:auto">
+          <p style="margin:0;font-size:13px;line-height:20px;color:#C9C4D3;max-width:38ch">Elevando tu experiencia digital con la mejor tecnología, línea gamer y accesorios esenciales.</p>
+          <div style="display:flex;flex-direction:row;gap:16px;align-items:center">
+            <a href="#" aria-label="Facebook" style="display:flex;align-items:center;justify-content:center;width:24px;height:24px"><img src="assets/ico-facebook.svg" alt="" style="width:100%;height:100%;object-fit:contain"></a>
+            <a href="#" aria-label="Instagram" style="display:flex;align-items:center;justify-content:center;width:24px;height:24px"><img src="assets/ico-instagram.svg" alt="" style="width:100%;height:100%;object-fit:contain"></a>
+            <a href="#" aria-label="TikTok" style="display:flex;align-items:center;justify-content:center;width:24px;height:24px"><img src="assets/ico-tiktok.svg" alt="" style="width:100%;height:100%;object-fit:contain"></a>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <h4 style="margin:0;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#FEFEFE">Categorías</h4>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <a href="#" style="font-size:13px;color:#C9C4D3">Zona Gamer</a>
+            <a href="#" style="font-size:13px;color:#C9C4D3">Catálogo</a>
+            <a href="#" style="font-size:13px;color:#C9C4D3">Audio &amp; TV</a>
+            <a href="#" style="font-size:13px;color:#C9C4D3">Figuras Coleccionables</a>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <h4 style="margin:0;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#FEFEFE">Información</h4>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <a href="nosotros.html" style="font-size:13px;color:#C9C4D3">Encuéntranos</a>
+            <a href="nosotros.html#contacto" style="font-size:13px;color:#C9C4D3">Contáctanos</a>
+            <a href="#" style="font-size:13px;color:#C9C4D3">Ofertas</a>
+            <a href="#" style="font-size:13px;color:#C9C4D3">Políticas</a>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <h4 style="margin:0;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#FEFEFE">Métodos de pago</h4>
+          <div style="display:flex;flex-direction:row;gap:8px;flex-wrap:wrap">
+                          <span style="display:inline-flex;align-items:center;padding:6px 10px;border-radius:3px;border:1px solid #484551;background:#2A2A2A;font-size:10px;font-weight:700;letter-spacing:0.5px;color:#C9C4D3;line-height:1.4">VISA</span>
+              <span style="display:inline-flex;align-items:center;padding:6px 10px;border-radius:3px;border:1px solid #484551;background:#2A2A2A;font-size:10px;font-weight:700;letter-spacing:0.5px;color:#C9C4D3;line-height:1.4">MASTERCARD</span>
+              <span style="display:inline-flex;align-items:center;padding:6px 10px;border-radius:3px;border:1px solid #484551;background:#2A2A2A;font-size:10px;font-weight:700;letter-spacing:0.5px;color:#C9C4D3;line-height:1.4">QR</span>
+              <span style="display:inline-flex;align-items:center;padding:6px 10px;border-radius:3px;border:1px solid #484551;background:#2A2A2A;font-size:10px;font-weight:700;letter-spacing:0.5px;color:#C9C4D3;line-height:1.4">LINK DE PAGO</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:row;flex-wrap:wrap;gap:12px;padding-top:20px;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.102)">
+        <span style="font-size:11px;color:rgba(201,196,211,0.6)">© 2026 T-CONECTA. Todos los derechos reservados.</span>
+        <span style="display:flex;flex-direction:row;gap:8px;align-items:center"><span style="width:5px;height:5px;background:#59D9DC"></span><span style="width:5px;height:5px;background:#463794"></span><span style="width:5px;height:5px;background:#F04D5A"></span></span>
+      </div>
+    </div>
+  </footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
