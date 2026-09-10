@@ -88,10 +88,105 @@
     img.addEventListener('error', reveal);
   }
 
+  /* ── Fondo animado de rayos (hero del Home, WebGL) ───────── */
+  var RAYS_FS = [
+    'precision highp float;',
+    'uniform float u_time; uniform vec2 u_resolution; uniform vec2 u_mouse;',
+    'float hash(vec2 p){ p = fract(p*vec2(123.34,456.21)); p += dot(p,p+45.32); return fract(p.x*p.y); }',
+    'float noise(vec2 p){ vec2 i=floor(p),f=fract(p);',
+    '  float a=hash(i),b=hash(i+vec2(1.,0.)),c=hash(i+vec2(0.,1.)),d=hash(i+vec2(1.,1.));',
+    '  vec2 u=f*f*(3.-2.*f);',
+    '  return mix(a,b,u.x)+(c-a)*u.y*(1.-u.x)+(d-b)*u.x*u.y; }',
+    'float fbm(vec2 p){ float v=0.,a=.5; vec2 shift=vec2(100.);',
+    '  mat2 rot=mat2(cos(.5),sin(.5),-sin(.5),cos(.5));',
+    '  for(int i=0;i<5;++i){ v+=a*noise(p); p=rot*p*2.+shift; a*=.5; } return v; }',
+    'void main(){',
+    '  vec2 uv=(gl_FragCoord.xy*2.-u_resolution.xy)/min(u_resolution.x,u_resolution.y);',
+    '  vec3 col=vec3(0.0157,0.0157,0.0157);',
+    '  vec3 c1=vec3(0.349,0.851,0.863);',
+    '  vec3 c2=vec3(0.275,0.216,0.580);',
+    '  float time=u_time*0.5;',
+    '  for(int i=0;i<3;i++){',
+    '    float t=time+float(i)*2.5;',
+    '    float y=uv.y+fbm(vec2(uv.x*0.5,t))*0.5-0.25;',
+    '    float intensity=0.005/abs(y);',
+    '    vec3 beam=mix(c1,c2,sin(t+uv.x)*0.5+0.5);',
+    '    col+=beam*intensity*(0.5+0.5*sin(t));',
+    '  }',
+    '  float md=length(uv-(u_mouse/u_resolution*2.-1.)*(u_resolution.x/min(u_resolution.x,u_resolution.y)));',
+    '  col+=c1*(0.02/(md+0.1));',
+    '  col*=1.-length(uv*0.5)*0.5;',
+    '  gl_FragColor=vec4(col,1.);',
+    '}'
+  ].join('\n');
+
+  var RAYS_VS = 'attribute vec2 a_position; void main(){ gl_Position=vec4(a_position,0.,1.); }';
+
+  function initRays(canvas) {
+    var gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (!gl) return;
+
+    function compile(type, src) {
+      var sh = gl.createShader(type);
+      gl.shaderSource(sh, src);
+      gl.compileShader(sh);
+      return sh;
+    }
+
+    var prog = gl.createProgram();
+    gl.attachShader(prog, compile(gl.VERTEX_SHADER, RAYS_VS));
+    gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, RAYS_FS));
+    gl.linkProgram(prog);
+    gl.useProgram(prog);
+
+    var buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+
+    var pos = gl.getAttribLocation(prog, 'a_position');
+    gl.enableVertexAttribArray(pos);
+    gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+
+    var uTime = gl.getUniformLocation(prog, 'u_time');
+    var uRes = gl.getUniformLocation(prog, 'u_resolution');
+    var uMouse = gl.getUniformLocation(prog, 'u_mouse');
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    function sync() {
+      var w = Math.max(1, Math.round(canvas.clientWidth * dpr));
+      var h = Math.max(1, Math.round(canvas.clientHeight * dpr));
+      if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; }
+    }
+    if (typeof ResizeObserver !== 'undefined') new ResizeObserver(sync).observe(canvas);
+    else window.addEventListener('resize', sync);
+    sync();
+
+    var mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+    window.addEventListener('mousemove', function (e) {
+      var r = canvas.getBoundingClientRect();
+      if (!r.width || !r.height) return;
+      mouse.x = ((e.clientX - r.left) / r.width) * canvas.width;
+      mouse.y = (1 - (e.clientY - r.top) / r.height) * canvas.height;
+    }, { passive: true });
+
+    (function render(t) {
+      sync();
+      gl.viewport(0, 0, canvas.width, canvas.height);
+      gl.uniform1f(uTime, t * 0.001);
+      gl.uniform2f(uRes, canvas.width, canvas.height);
+      gl.uniform2f(uMouse, mouse.x, mouse.y);
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      requestAnimationFrame(render);
+    })(0);
+  }
+
   /* ── Fondo animado de partículas (hero) ──────────────────── */
   function initParticles() {
     var canvas = document.getElementById('hero-canvas');
     if (!canvas || reduceMotion) return;
+
+    if (canvas.getAttribute('data-effect') === 'rays') { initRays(canvas); return; }
+
     var ctx = canvas.getContext('2d');
     if (!ctx) return;
 

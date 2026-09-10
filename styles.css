@@ -6,6 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* el atributo hidden debe ganar sobre los display en línea */
+[hidden] { display: none !important; }
+
 a { color: #59D9DC; text-decoration: none; }
 a:hover { color: #37BFC2; }
 
