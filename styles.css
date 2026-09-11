@@ -92,3 +92,8 @@ a:hover { color: #37BFC2; }
     max-width: calc(100% - 32px);
   }
 }
+
+@media (max-width: 768px) {
+  .hero-cta { gap: 20px !important; }
+  .hero-btn { flex: 1 1 100% !important; width: 100% !important; }
+}
