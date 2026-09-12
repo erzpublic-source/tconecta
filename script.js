@@ -68,9 +68,16 @@
         e.target.style.transform = 'none';
         io.unobserve(e.target);
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
 
     targets.forEach(function (el) { io.observe(el); });
+
+    // red de seguridad: si algo no llegó a dispararse, se muestra igual
+    window.setTimeout(function () {
+      targets.forEach(function (el) {
+        if (el.style.opacity === '0') { el.style.opacity = '1'; el.style.transform = 'none'; }
+      });
+    }, 2500);
   }
 
   /* ── Entrada de la imagen del hero ───────────────────────── */
